@@ -160,6 +160,7 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/verify", async (req, res) => {
+
   try {
     const { email, otp } = req.body;
 
@@ -181,6 +182,7 @@ router.post("/verify", async (req, res) => {
     res.status(500).json({ message: "Error verifying user." });
   }
 });
+
 
 router.get("/sercret-data", authMiddleware, (req, res) => {
   res.status(200).json("Hi! if youre seeing !!!");
